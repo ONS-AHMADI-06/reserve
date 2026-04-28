@@ -1,0 +1,5 @@
+com\etudiant\remarques\entity\Remarque.class
+com\etudiant\remarques\RemarquesApplication.class
+com\etudiant\remarques\repository\RemarqueRepository.class
+com\etudiant\remarques\controller\RemarqueController.class
+com\etudiant\remarques\service\RemarqueService.class

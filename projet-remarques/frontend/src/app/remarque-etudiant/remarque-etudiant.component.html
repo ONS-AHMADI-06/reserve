@@ -1,0 +1,99 @@
+<!-- ============================================ -->
+<!-- Composant : Remarques Étudiant               -->
+<!-- ============================================ -->
+
+<div class="container">
+
+  <!-- MESSAGE DE FEEDBACK -->
+  <div *ngIf="message" [class]="'alerte alerte-' + messageType">
+    {{ message }}
+  </div>
+
+  <!-- =============================== -->
+  <!-- SECTION 1 : RECHERCHE           -->
+  <!-- =============================== -->
+  <div class="carte">
+    <h2>🔍 Voir les remarques d'un étudiant</h2>
+
+    <div class="formulaire-ligne">
+      <label for="etudiantId">ID de l'étudiant :</label>
+      <input
+        id="etudiantId"
+        type="number"
+        [(ngModel)]="etudiantIdRecherche"
+        min="1"
+        placeholder="Ex: 1"
+      />
+      <button class="btn-primaire" (click)="chargerRemarques()" [disabled]="chargement">
+        {{ chargement ? 'Chargement...' : 'Afficher les remarques' }}
+      </button>
+    </div>
+  </div>
+
+  <!-- =============================== -->
+  <!-- SECTION 2 : LISTE DES REMARQUES -->
+  <!-- =============================== -->
+  <div class="carte">
+    <h2>📋 Liste des remarques (Étudiant {{ etudiantIdRecherche }})</h2>
+
+    <!-- Indicateur de chargement -->
+    <div *ngIf="chargement" class="chargement">
+      ⏳ Chargement en cours...
+    </div>
+
+    <!-- Aucune remarque -->
+    <div *ngIf="!chargement && remarques.length === 0" class="vide">
+      Aucune remarque trouvée pour cet étudiant.
+    </div>
+
+    <!-- Liste des remarques -->
+    <div *ngIf="!chargement && remarques.length > 0">
+      <div class="compteur">{{ remarques.length }} remarque(s) trouvée(s)</div>
+
+      <div *ngFor="let r of remarques" class="remarque-item">
+        <div class="remarque-contenu">{{ r.contenu }}</div>
+        <div class="remarque-meta">
+          <span>📅 {{ formaterDate(r.date) }}</span>
+          <span>👤 Étudiant n° {{ r.etudiantId }}</span>
+          <span class="badge">#{{ r.id }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============================== -->
+  <!-- SECTION 3 : AJOUTER UNE REMARQUE -->
+  <!-- =============================== -->
+  <div class="carte">
+    <h2>➕ Ajouter une remarque</h2>
+
+    <div class="formulaire-vertical">
+
+      <div class="champ">
+        <label for="etudiantIdForm">ID de l'étudiant :</label>
+        <input
+          id="etudiantIdForm"
+          type="number"
+          [(ngModel)]="nouvelleRemarque.etudiantId"
+          min="1"
+          placeholder="Ex: 1"
+        />
+      </div>
+
+      <div class="champ">
+        <label for="contenu">Contenu de la remarque :</label>
+        <textarea
+          id="contenu"
+          [(ngModel)]="nouvelleRemarque.contenu"
+          rows="4"
+          placeholder="Écrivez la remarque ici..."
+        ></textarea>
+      </div>
+
+      <button class="btn-succes" (click)="soumettreFormulaire()">
+        ✅ Enregistrer la remarque
+      </button>
+    </div>
+  </div>
+
+</div>

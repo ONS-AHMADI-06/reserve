@@ -1,0 +1,204 @@
+/* ============================================ */
+/* Styles du composant Remarques Étudiant       */
+/* ============================================ */
+
+.container {
+  padding: 10px 0;
+}
+
+/* Carte (section encadrée) */
+.carte {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.carte h2 {
+  margin-top: 0;
+  color: #1976d2;
+  font-size: 1.2em;
+  border-bottom: 2px solid #e3f2fd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Formulaire horizontal (recherche) */
+.formulaire-ligne {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.formulaire-ligne label {
+  font-weight: bold;
+  color: #555;
+  white-space: nowrap;
+}
+
+/* Formulaire vertical (ajout) */
+.formulaire-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.champ {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.champ label {
+  font-weight: bold;
+  color: #555;
+}
+
+/* Inputs et textarea */
+input[type="number"],
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  font-family: Arial, sans-serif;
+  transition: border-color 0.2s;
+}
+
+input[type="number"] {
+  width: 120px;
+}
+
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 2px rgba(25,118,210,0.15);
+}
+
+/* Boutons */
+.btn-primaire {
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background 0.2s;
+}
+
+.btn-primaire:hover:not(:disabled) {
+  background: #1565c0;
+}
+
+.btn-primaire:disabled {
+  background: #90caf9;
+  cursor: not-allowed;
+}
+
+.btn-succes {
+  background: #388e3c;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  align-self: flex-start;
+  transition: background 0.2s;
+}
+
+.btn-succes:hover {
+  background: #2e7d32;
+}
+
+/* Carte remarque */
+.remarque-item {
+  border: 1px solid #e3f2fd;
+  border-left: 4px solid #1976d2;
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  background: #fafafa;
+}
+
+.remarque-contenu {
+  font-size: 1em;
+  color: #333;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.remarque-meta {
+  display: flex;
+  gap: 20px;
+  font-size: 0.82em;
+  color: #888;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: #1976d2;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.85em;
+}
+
+/* Compteur */
+.compteur {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+/* États */
+.chargement {
+  text-align: center;
+  color: #888;
+  padding: 20px;
+  font-size: 1.1em;
+}
+
+.vide {
+  text-align: center;
+  color: #999;
+  padding: 30px;
+  font-style: italic;
+}
+
+/* Alertes */
+.alerte {
+  padding: 12px 20px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 0.95em;
+}
+
+.alerte-success {
+  background: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  color: #2e7d32;
+}
+
+.alerte-error {
+  background: #ffebee;
+  border: 1px solid #ef9a9a;
+  color: #c62828;
+}
+
+.alerte-info {
+  background: #e3f2fd;
+  border: 1px solid #90caf9;
+  color: #1565c0;
+}
