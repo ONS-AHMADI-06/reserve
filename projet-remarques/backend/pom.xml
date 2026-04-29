@@ -15,13 +15,14 @@
     <artifactId>remarques</artifactId>
     <version>1.0.0</version>
     <name>remarques</name>
-    <description>Gestion des remarques étudiants</description>
+    <description>Gestion des remarques etudiants</description>
 
     <properties>
         <java.version>17</java.version>
     </properties>
 
     <dependencies>
+
         <!-- Spring Web (REST API) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -41,12 +42,44 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Tests -->
+        <!-- Tests Spring Boot -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- Cucumber Java -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>7.15.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Cucumber Spring -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-spring</artifactId>
+            <version>7.15.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Cucumber JUnit 5 -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit-platform-engine</artifactId>
+            <version>7.15.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JUnit Platform Suite -->
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-suite</artifactId>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -57,4 +90,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>
